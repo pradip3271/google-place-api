@@ -24,10 +24,10 @@ public class PlacePhotosTest extends BaseTest {
 		String photoReference = jp.get("result.photos[0].photo_reference");
 		System.out.println(photoReference);
 		
-		// Get place photo
+		// Get place photo and verify
 		resp = RestServices.getPlacePhoto(reqSpecification, photoReference);
 		resp.then().statusCode(200).and(). 
-		header("Content-Type", "image/png");
+		header("Content-Type", "image/jpeg");
 	}
 	
 
